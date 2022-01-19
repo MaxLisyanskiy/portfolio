@@ -1,69 +1,25 @@
-import React from "react"
-import Card from "./AppCard"
+import React, {useState} from "react"
 import Fade from "react-reveal/Fade"
+// import Modal from "react-modal/lib/components/Modal"
 
-import vies from '../../images/viessmann.jpg'
-import vies2 from '../../images/vies.jpg'
-import ezdun from '../../images/ezdun.jpg'
-import sms from '../../images/sms.jpg'
-import tclub from '../../images/tclub.jpg'
-import bushe from '../../images/bushe.jpg'
+import Modal from "../Modal/Modal"
+
+import Projects from './projects'
+import Card from "./AppCard"
 
 const AppProjects = () => {
 
-    const proj = [
-        {
-            title: "Project One", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc: ezdun,
-            //Project URL - Add Your Project Url Here
-            url: "http://chetanverma.com/",
-        },
-        {
-            title: "Project Two", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc: vies2,
-            url: "http://chetanverma.com/",
-        },
-        {
-            title: "Project Three", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc: sms,
-            url: "http://chetanverma.com/",
-        },
-        {
-            title: "Project Four", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc: tclub,
-            url: "http://chetanverma.com/",
-        },
-        {
-            title: "Project Five", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc: bushe,
-            url: "http://chetanverma.com/",
-        },
-        {
-            title: "Project Six", //Project Title - Add Your Project Title Here
-            para:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.", // Add Your Service Type Here
-            //Project Image - Add Your Project Image Here
-            imageSrc:
-                "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-            //Project URL - Add Your Project Url Here
-            url: "http://chetanverma.com/",
-        },
-    ]
+    const [isModal, setModal] = React.useState(false)
+
+    const [dataModal, setDataModal] = useState(Projects);
+    const [selectedProj, setSelectedProj] = useState(null);
+
+    const onClose = () => setModal(false)
+
+    function openModal(i) {
+      setSelectedProj(dataModal[i]);
+      setModal(true)
+    }
 
     return (
         <div className="section" id="projects">
@@ -77,34 +33,56 @@ const AppProjects = () => {
                         <h3 className="projects-title">Commercial projects</h3>
                         <div className="grid">
                             <Fade bottom cascade>
-                                {proj.map((project, index) => (
+                                {Projects.map((project, index) => (
                                     <Card
                                         key={index}
+                                        index={index}
                                         heading={project.title}
                                         paragraph={project.para}
                                         imgUrl={project.imageSrc}
-                                        projectLink={project.url}
+                                        openModal={openModal}
                                     ></Card>
                                 ))}
                             </Fade>
                         </div>
                     </div>
-                    <div>
-                        <h3 className="projects-title">Pet-projects</h3>
-                        <div className="grid">
-                            <Fade bottom cascade>
-                                {proj.map((project, index) => (
-                                    <Card
-                                        key={index}
-                                        heading={project.title}
-                                        paragraph={project.para}
-                                        imgUrl={project.imageSrc}
-                                        projectLink={project.url}
-                                    ></Card>
-                                ))}
-                            </Fade>
-                        </div>
-                    </div>
+
+
+                {/* { isOpen 
+                    ?                     
+                    <Modal
+                      isOpen={isOpen}
+                      onRequestClose={toggleModal}
+                      ariaHideApp={false}
+                    >
+                      <span>{selectedProj.title}</span>
+
+                      <button onClick={toggleModal}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L13 13" stroke="#24272E" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M13 1L1 13" stroke="#24272E" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </button>
+
+                    </Modal>
+                    :
+                    <Modal></Modal>
+                } */}
+
+                  { isModal 
+                    ?                     
+                    <Modal
+                      visible={isModal}
+                      title={selectedProj.title}
+                      content={<p>Что-то важное</p>}
+                      footer={<button onClick={onClose}>Закрыть</button>}
+                      onClose={onClose}
+                    >
+                      
+                    </Modal>
+                    :
+                    <Modal></Modal>
+                }
                 </div>
             </div>
         </div>

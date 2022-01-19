@@ -17,6 +17,14 @@
     transition: all 500ms ease-in-out;
     transform: translate(0, 20px);
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    // background-color: rgba(0, 0, 0, 0.9);
+    background-color: #000000;
+
     h1 {
       font-size: 14px;
       color: white;
@@ -28,7 +36,7 @@
     }
 
     .btn {
-      background-color: black;
+      background-color: #e0b02b;
       color: white;
       padding: 10px;
       text-decoration: none;

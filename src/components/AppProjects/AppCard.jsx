@@ -1,8 +1,10 @@
 import React from "react"
 
-const Card = ({ heading, paragraph, imgUrl, projectLink }) => {
+const Card = ({ index, heading, paragraph, imgUrl, openModal}) => {
+
     return (
-        <div
+        <>
+          <div
             className="card"
             style={{
                 backgroundImage:
@@ -10,20 +12,19 @@ const Card = ({ heading, paragraph, imgUrl, projectLink }) => {
                     imgUrl +
                     ")",
             }}
-        >
+          >
             <div className="content">
                 <h1 className="header">{heading}</h1>
                 <p className="text">{paragraph}</p>
-                <a
-                    href={projectLink ? projectLink : "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={() => openModal(index)}
                     className="btn"
                 >
-                    Explore
-                </a>
-            </div>
-        </div>
+                    Explore 
+                </button>
+              </div>
+          </div>
+        </>
     )
 }
 

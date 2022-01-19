@@ -19,8 +19,21 @@
       outline: none;
       border: 0px;
       cursor: pointer;
+      position: relative;
+
       &:hover {
         opacity: 1;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 40%;
+          bottom: 10px;
+          width: 40px;
+          height: 3px;
+          transform: skew(-12deg) translateX(-50%);
+          background: rgba(0,144,38,0.4);
+          z-index: -1;
+        }
       }
     }
     .active {
