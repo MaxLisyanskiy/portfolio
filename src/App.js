@@ -6,6 +6,7 @@ import AppHome from "./components/AppHome/AppHome";
 import AppAbout from "./components/AppAbout/AppAbout";
 import AppCommercialProjects from "./components/AppCommercialProjects/AppCommercialProjects";
 import AppContact from "./components/AppContact/AppContact";
+import AppPetProjects from "./components/AppPetProjects/AppPetProjects";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <AppHome/>
       <AppAbout/>
       <AppCommercialProjects/>
+      <AppPetProjects/>
       <AppContact/>
     </>
   );
