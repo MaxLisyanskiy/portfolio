@@ -4,7 +4,7 @@ import './App.css';
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppHome from "./components/AppHome/AppHome";
 import AppAbout from "./components/AppAbout/AppAbout";
-import AppProjects from "./components/AppProjects/AppProjects";
+import AppCommercialProjects from "./components/AppCommercialProjects/AppCommercialProjects";
 import AppContact from "./components/AppContact/AppContact";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <AppHeader/>
       <AppHome/>
       <AppAbout/>
-      <AppProjects/>
+      <AppCommercialProjects/>
       <AppContact/>
     </>
   );

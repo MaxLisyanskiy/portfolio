@@ -40,3 +40,41 @@
     z-index: -1;
   }
 }
+
+.more-details {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+  font-size: 12px;
+}
+.more-details:hover {
+  background-position: right center;
+}
+
+.visite-site {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(222,195,182,1) 41%, rgba(253,9,112,1) 100%, rgba(0,212,255,1) 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.visite-site:hover {
+  background-position: right center;
+}

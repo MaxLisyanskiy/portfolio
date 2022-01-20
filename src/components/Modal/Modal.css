@@ -24,7 +24,6 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -48,8 +47,14 @@
   justify-content: flex-end;
 }
 .modal-close {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  background: grey;
+  border-radius: 50%;
+  padding: 0px 10px;
+  font-size: 30px;
   cursor: pointer;
-  padding: 1rem;
   margin: -1rem -1rem -1rem auto;
 }
 .modal-body {
@@ -60,7 +65,12 @@
 }
 
 .modal-title {
+  text-align: center;
   margin: 0;
+}
+
+.modal-img {
+  max-width: 100%;
 }
 
 @keyframes appear {
@@ -79,3 +89,4 @@
     transform: translateY(0);
   }
 }
+

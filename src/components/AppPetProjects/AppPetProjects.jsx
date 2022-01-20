@@ -1,17 +1,16 @@
 import React, {useState} from "react"
 import Fade from "react-reveal/Fade"
-// import Modal from "react-modal/lib/components/Modal"
 
 import Modal from "../Modal/Modal"
+import Card from "./AppPetCard"
 
-import Projects from './projects'
-import Card from "./AppCard"
+import eProjects from './petProjects'
 
-const AppProjects = () => {
+const AppPetProjects = () => {
 
     const [isModal, setModal] = React.useState(false)
 
-    const [dataModal, setDataModal] = useState(Projects);
+    const [dataModal, setDataModal] = useState(eProjects);
     const [selectedProj, setSelectedProj] = useState(null);
 
     const onClose = () => setModal(false)
@@ -33,7 +32,7 @@ const AppProjects = () => {
                         <h3 className="projects-title">Commercial projects</h3>
                         <div className="grid">
                             <Fade bottom cascade>
-                                {Projects.map((project, index) => (
+                                {eProjects.map((project, index) => (
                                     <Card
                                         key={index}
                                         index={index}
@@ -41,33 +40,12 @@ const AppProjects = () => {
                                         paragraph={project.para}
                                         imgUrl={project.imageSrc}
                                         openModal={openModal}
-                                    ></Card>
+                                        technologyStack={project.technologyStack}
+                                    />
                                 ))}
                             </Fade>
                         </div>
                     </div>
-
-
-                {/* { isOpen 
-                    ?                     
-                    <Modal
-                      isOpen={isOpen}
-                      onRequestClose={toggleModal}
-                      ariaHideApp={false}
-                    >
-                      <span>{selectedProj.title}</span>
-
-                      <button onClick={toggleModal}>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1L13 13" stroke="#24272E" stroke-width="2" stroke-linecap="round"/>
-                          <path d="M13 1L1 13" stroke="#24272E" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                      </button>
-
-                    </Modal>
-                    :
-                    <Modal></Modal>
-                } */}
 
                   { isModal 
                     ?                     
@@ -89,4 +67,4 @@ const AppProjects = () => {
     )
 }
 
-export default AppProjects;
+export default AppPetProjects;

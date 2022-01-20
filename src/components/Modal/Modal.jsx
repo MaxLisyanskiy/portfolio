@@ -5,7 +5,11 @@ import './Modal.css'
 const Modal = ({
   visible = false,
   title,
-  children,
+  img,
+  para,
+  aditionalInfo,
+  moreInfoUrl,
+  visiteSite,
   onClose,
 }) => {
 
@@ -37,7 +41,17 @@ return (
           <span className="modal-close" onClick={onClose}>&times;</span>
         </div>
         <div className="modal-body">
-          <div className="modal-content">{children}</div>
+          <div className="modal-content">
+            <img className="modal-img" src={img} alt={title}/>
+            <p>{para}</p>
+            <p>{aditionalInfo}</p>
+          </div>
+        </div>
+        <div className="modal-footer">
+          <div className="modal-content">
+            {moreInfoUrl ? <a href={moreInfoUrl} className="more-details">More details...</a> : ''}
+            {visiteSite ? <a href={visiteSite} className="visite-site">Visit site</a> : ''}
+          </div>
         </div>
       </div>
     </div>
