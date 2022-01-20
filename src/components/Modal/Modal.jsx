@@ -14,11 +14,11 @@ const Modal = ({
 }) => {
 
 // создаем обработчик нажатия клавиши Esc
-const onKeydown = ({key}) => {
-  switch (key) {
-  case 'Escape':
-  onClose()
-  break
+const onKeydown = ({Btn}) => {
+  switch (Btn) {
+    case 'Escape':
+      onClose()
+    break
   }
 }
 
@@ -49,8 +49,8 @@ return (
         </div>
         <div className="modal-footer">
           <div className="modal-content">
-            {moreInfoUrl ? <a href={moreInfoUrl} className="more-details">More details...</a> : ''}
-            {visiteSite ? <a href={visiteSite} className="visite-site">Visit site</a> : ''}
+            {moreInfoUrl ? <a href={moreInfoUrl} target="_blank" rel="noreferrer" className="more-details">More details...</a> : ''}
+            {visiteSite ? <a href={visiteSite} target="_blank" rel="noreferrer" className="visite-site">Visit site</a> : ''}
           </div>
         </div>
       </div>

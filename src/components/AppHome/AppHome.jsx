@@ -30,16 +30,16 @@ const AppHome = () => {
                     </Fade>
                     <Fade bottom>
                         <div className="header-icons">
-                            <a href="https://github.com/MaxLisyanskiy" target="_blank" className="header-icon">
+                            <a href="https://github.com/MaxLisyanskiy" target="_blank" rel="noreferrer" className="header-icon">
                                 <img src={git} alt="git"/>
                             </a>
-                            <a href="https://github.com/MaxLisyanskiy" target="_blank" className="header-icon">
+                            <a href="https://github.com/MaxLisyanskiy" target="_blank" rel="noreferrer" className="header-icon">
                                 <img src={vk} alt="vk"/>
                             </a>
-                            <a href="https://github.com/MaxLisyanskiy" target="_blank" className="header-icon">
+                            <a href="https://github.com/MaxLisyanskiy" target="_blank" rel="noreferrer" className="header-icon">
                                 <img src={telegram} alt="telegram"/>
                             </a>
-                            <a href="https://spb.hh.ru/resume/61a2d302ff07fe62460039ed1f554542734272" target="_blank" className="header-icon">
+                            <a href="https://spb.hh.ru/resume/61a2d302ff07fe62460039ed1f554542734272" target="_blank" rel="noreferrer" className="header-icon">
                                 <img src={hh} alt="hh"/>
                             </a>
                         </div>
