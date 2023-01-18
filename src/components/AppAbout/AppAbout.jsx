@@ -14,7 +14,7 @@ const About = () => {
                             <h2>About Me</h2>
                         </Fade>
                         <div>
-                            <div className="about-text">🏠 I'm pre-middle <strong>Front-end Developer</strong> living in <strong>Saint-Petersburg</strong>.</div>
+                            <div className="about-text">🏠 I'm middle <strong>Front-end Developer</strong> living in <strong>Saint-Petersburg</strong>.</div>
                             <div className="about-text">⭐ I'm currently learning <strong>TypeScript</strong>, <strong>React</strong> and <strong>Vue</strong></div>
                             <div className="about-text">❤️ And I enjoy making  beautiful web sites on HTML,CSS and JavaScript</div>
                         </div>
